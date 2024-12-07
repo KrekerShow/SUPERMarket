@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar с кнопкой поиска -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:elevation="4dp">
+
+        <!-- Кнопка поиска -->
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Поиск"
+            android:background="?attr/selectableItemBackground"
+            android:tint="@android:color/white" />
+
+        <!-- Поле поиска -->
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите название для поиска"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Основной контент -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <!-- RecyclerView для списка -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+            <!-- Счётчик товаров -->
+<TextView
+    android:id="@+id/item_counter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Куплено: 0/0"
+    android:textSize="16sp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="8dp" />
+
+
+
+        <!-- Область ввода и кнопка снизу -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp">
+            
+
+            <!-- Поле ввода -->
+            <EditText
+                android:id="@+id/item_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Введите товар"
+                android:inputType="text"
+                android:padding="8dp"
+                android:background="@android:drawable/editbox_background" />
+
+            <!-- Кнопка -->
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Добавить"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
